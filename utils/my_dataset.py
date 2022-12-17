@@ -52,3 +52,7 @@ def get_test_onek_data_loader():
 def get_predict_data_loader():
     dataset = mydataset(captcha_setting.PREDICT_DATASET_PATH, transform=transform)
     return DataLoader(dataset, batch_size=1, shuffle=True)
+
+def get_predict_no_shuffle_data_loader():
+    dataset = mydataset(captcha_setting.PREDICT_DATASET_PATH, transform=transform)
+    return DataLoader(dataset, batch_size=1, shuffle=False)
